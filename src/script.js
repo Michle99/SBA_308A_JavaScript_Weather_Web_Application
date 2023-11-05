@@ -68,3 +68,20 @@ function displayWeatherData(data) {
 
     weatherCard.style.display = 'block';
 }
+
+async function get5DayForecast(location) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`;
+
+    try {
+        const response = await fetch(apiUrl);
+        if (response.ok) {
+            const data = await response.json();
+            console.log("Daily weather data:", data)
+            display16DayForecast(data);
+        } else {
+            console.error('Failed to fetch forecast data');
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
