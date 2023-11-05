@@ -147,3 +147,28 @@ function display5DayForecast(data) {
         forecast.appendChild(card);
     }
 }
+
+
+function updateBackgroundColor(weather) {
+    // Set the background color based on weather conditions
+    let backgroundColor;
+
+    switch (weather) {
+        case 'Clear':
+            backgroundColor = 'rgb(135, 206, 235)'; // Light Blue
+            break;
+        case 'Clouds':
+            backgroundColor = 'rgb(192, 192, 192)'; // Gray
+            break;
+        case 'Rain':
+            backgroundColor = 'rgb(0, 128, 128)'; // Teal
+            break;
+        default:
+            backgroundColor = 'white'; // Default white
+    }
+
+    document.body.style.backgroundColor = backgroundColor;
+}
+
+// Initial hide the weather card
+weatherCard.style.display = 'none';
