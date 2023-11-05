@@ -24,14 +24,14 @@ searchButton.addEventListener('click', () => {
     const city = cityInput.value;
     const state = stateInput.value;
     const country = countryInput.value;
-    if (city && country) {
-        const location = state ? `${city},${state},${country}` : `${city},${country}`;
-        getWeatherData(location);
-        get5DayForecast(location);
+    if (city) {
+        getWeatherData(city, state, country);
+        get5DayForecast(city, state, country);
     }
 });
 
-async function getWeatherData(location) {
+async function getWeatherData(city, state = '', country = '') {
+    const location = state ? `${city},${state},${country}` : `${city},${country}`;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
 
     try {
@@ -51,7 +51,7 @@ async function getWeatherData(location) {
 function displayWeatherData(data) {
     cityName.textContent = data.name;
     weatherDescription.textContent = data.weather[0].description;
-    weatherIcon.className = `bi bi-weather-`;
+    weatherIcon.className = `bi bi-weather-${data.weather[0].icon}`;
     temperature.textContent = `Temperature: ${data.main.temp.toFixed(1)}°F`;
     feelsLike.textContent = `Feels Like: ${data.main.feels_like.toFixed(1)}°F`;
     pressure.textContent = `Pressure: ${data.main.pressure} hPa`;
@@ -69,7 +69,8 @@ function displayWeatherData(data) {
     weatherCard.style.display = 'block';
 }
 
-async function get5DayForecast(location) {
+async function get5DayForecast(city, state = '', country = '') {
+    const location = state ? `${city},${state},${country}` : `${city},${country}`;
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`;
 
     try {
