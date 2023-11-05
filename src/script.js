@@ -114,16 +114,19 @@ function display5DayForecast(data) {
         let iconElement = document.createElement('i');
         switch (forecastItem.weather[0].main) {
             case "Clear":
-                iconElement.className = `bi bi-brightness-low-fill`;
+                iconElement.className = `bi bi-brightness-low`;
                 break;
             case "Clouds":
-                iconElement.className = `bi bi-cloudy-fill`;
-            case "Rains":
-                iconElement.className = `bi bi-cloud-rain-fill`;
+                iconElement.className = `bi bi-cloudy`;
+                break;
+            case "Rain":
+                iconElement.className = `bi bi-cloud-rain`;
+                break;
             case "Snow":
-                iconElement.className = `bi bi-cloud-snow-fill`;
+                iconElement.className = `bi bi-cloud-snow`;
+                break;
             default:
-                iconElement.className = `bi bi-brightness-alt-high-fill`;
+                iconElement.className = `bi bi-brightness-alt-high`;
         }
         
         // Daily weather details in a div container
