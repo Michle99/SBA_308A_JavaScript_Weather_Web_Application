@@ -20,7 +20,18 @@ Weather web application to check the weather forecast for a specific city built 
 
 ## File Structure
 ```
+components
 
+icons
+    cloud.png
+    cloudy.png
+src
+  index.html
+  script.js
+styles
+    styles.css
+LICENSE
+README.md
 ```
 
 
