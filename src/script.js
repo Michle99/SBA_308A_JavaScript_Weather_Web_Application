@@ -77,11 +77,73 @@ async function get5DayForecast(location) {
         if (response.ok) {
             const data = await response.json();
             console.log("Daily weather data:", data)
-            display16DayForecast(data);
+            display5DayForecast(data);
         } else {
             console.error('Failed to fetch forecast data');
         }
     } catch (error) {
         console.error('An error occurred:', error);
+    }
+}
+
+function display5DayForecast(data) {
+    forecast.innerHTML = ''; // Clear previous forecast
+    console.log("forecast div:", forecast)
+
+    for (let i = 0; i < 5; i++) {
+        const forecastItem = data.list[i * 8]; // Data for each day at 12:00 PM
+        console.log("Forecast Item:", forecastItem)
+        const date = new Date(forecastItem.dt * 1000);
+
+        const card = document.createElement('div');
+        card.classList.add('card', 'col-md-2', 'm-2');
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+        const dateElement = document.createElement('h5');
+        dateElement.textContent = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+       
+        // if statement to change cloud icons
+        if(forecastItem) {
+            console.log("Forecast data weather:", forecastItem.weather[0].main)
+        }
+        // Switch statement to change weather icons respectively
+        let iconElement = document.createElement('i');
+        switch (forecastItem.weather[0].main) {
+            case "Clear":
+                iconElement.className = `bi bi-brightness-low-fill`;
+                break;
+            case "Clouds":
+                iconElement.className = `bi bi-cloudy-fill`;
+        }
+        
+        // Daily weather details in a div container
+        const weatherDetails = document.createElement('div');
+        weatherDetails.classList.add('card-text');
+        const temperatureElement = document.createElement('p');
+        temperatureElement.textContent = `Temp: ${forecastItem.main.temp.toFixed(1)}°F`;
+        // Other weather details
+        const dailyFeelsLike = document.createElement('p');
+        dailyFeelsLike.textContent = `Temp: ${forecastItem.main.feels_like.toFixed(1)}°F`;
+        const dailyHumidity = document.createElement('p');
+        dailyHumidity.textContent = `Humidity: ${forecastItem.main.humidity}%`;
+        const dailyWeatherDesc = document.createElement('p');
+        dailyWeatherDesc.textContent = `${forecastItem.weather[0].description}`;
+
+        cardBody.appendChild(dateElement);
+        cardBody.appendChild(iconElement);
+        weatherDetails.appendChild(temperatureElement)
+        weatherDetails.appendChild(dailyFeelsLike)
+        weatherDetails.appendChild(dailyWeatherDesc)
+        weatherDetails.appendChild(dailyHumidity)
+        // cardBody.appendChild(temperatureElement);
+        // cardBody.appendChild(dailyFeelsLike);
+        // cardBody.appendChild(dailyHumidity);
+        // cardBody.appendChild(dailyWeatherDesc);
+        cardBody.appendChild(weatherDetails);
+        card.appendChild(cardBody);
+        forecast.appendChild(card);
     }
 }
