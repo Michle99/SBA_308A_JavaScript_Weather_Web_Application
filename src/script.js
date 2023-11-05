@@ -1,7 +1,7 @@
 // Import modules
-import fetchWeatherData from '../components/weatherData.js';
+import fetchWeatherData from '../fetchWeatherData/weatherData.js';
 import getBackgroundImage from '../components/backgroundImage.js'
-import fetch5DayWeatherForecast from "../components/weatherForecast.js";
+import fetch5DayWeatherForecast from "../fetchWeatherData/weatherForecast.js";
 import { display5DayForecast } from '../components/weatherForecasts/displayForecast.js'
 import {
     cityInput,
