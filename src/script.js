@@ -121,29 +121,33 @@ function display5DayForecast(data) {
         }
         
         // Daily weather details in a div container
-        const weatherDetails = document.createElement('div');
-        weatherDetails.classList.add('card-text');
+        // const weatherDetails = document.createElement('div');
+        // weatherDetails.classList.add('card-text');
         const temperatureElement = document.createElement('p');
         temperatureElement.textContent = `Temp: ${forecastItem.main.temp.toFixed(1)}°F`;
+        temperatureElement.classList.add('card-text');
         // Other weather details
         const dailyFeelsLike = document.createElement('p');
         dailyFeelsLike.textContent = `Temp: ${forecastItem.main.feels_like.toFixed(1)}°F`;
+        dailyFeelsLike.classList.add('card-text');
         const dailyHumidity = document.createElement('p');
         dailyHumidity.textContent = `Humidity: ${forecastItem.main.humidity}%`;
+        dailyHumidity.classList.add('card-text');
         const dailyWeatherDesc = document.createElement('p');
         dailyWeatherDesc.textContent = `${forecastItem.weather[0].description}`;
+        dailyWeatherDesc.classList.add('card-text');
 
         cardBody.appendChild(dateElement);
         cardBody.appendChild(iconElement);
-        weatherDetails.appendChild(temperatureElement)
-        weatherDetails.appendChild(dailyFeelsLike)
-        weatherDetails.appendChild(dailyWeatherDesc)
-        weatherDetails.appendChild(dailyHumidity)
-        // cardBody.appendChild(temperatureElement);
-        // cardBody.appendChild(dailyFeelsLike);
-        // cardBody.appendChild(dailyHumidity);
-        // cardBody.appendChild(dailyWeatherDesc);
-        cardBody.appendChild(weatherDetails);
+        // weatherDetails.appendChild(temperatureElement)
+        // weatherDetails.appendChild(dailyFeelsLike)
+        // weatherDetails.appendChild(dailyWeatherDesc)
+        // weatherDetails.appendChild(dailyHumidity)
+        cardBody.appendChild(temperatureElement);
+        cardBody.appendChild(dailyFeelsLike);
+        cardBody.appendChild(dailyHumidity);
+        cardBody.appendChild(dailyWeatherDesc);
+        // cardBody.appendChild(weatherDetails);
         card.appendChild(cardBody);
         forecast.appendChild(card);
     }
@@ -151,24 +155,24 @@ function display5DayForecast(data) {
 
 
 function updateBackgroundColor(weather) {
-    // Set the background color based on weather conditions
-    let backgroundColor;
+    // Set the background image based on weather conditions
+    let backgroundImage;
 
     switch (weather) {
         case 'Clear':
-            backgroundColor = 'rgb(135, 206, 235)'; // Light Blue
+            backgroundImage = '/weather_backgrounds/clear.jpg'; // Clear sky image
             break;
         case 'Clouds':
-            backgroundColor = 'rgb(192, 192, 192)'; // Gray
+            backgroundImage = '/weather_backgrounds/cloudy.jpg'; // Gray
             break;
         case 'Rain':
-            backgroundColor = 'rgb(0, 128, 128)'; // Teal
+            backgroundImage = '/weather_backgrounds/rainy.jpg'; // Teal
             break;
         default:
-            backgroundColor = 'white'; // Default white
+            backgroundImage = '/weather_backgrounds/sandy.jpg'; // Default white
     }
 
-    document.body.style.backgroundColor = backgroundColor;
+    document.body.style.backgroundImage = `url(${backgroundImage})`;
 }
 
 // Initial hide the weather card
