@@ -2,23 +2,19 @@
 
 ## Table Of Contents
 1. [Description](#description)
-2. [Pre-requisites](#pre-requisites)
-3. [File Structure](#file-structure)
+2. [File Structure](#file-structure)
+3. [Instructions](#instructions)
 4. [Objectives](#objectives)
-5. [Requirements](#requirements)
-6. [Screenshots](#screenshots)
-7. [Getting Started](#getting-started)
+5. [Pre-requisites](#pre-requisites)
+6. [Requirements](#requirements)
+7. [Screenshots](#screenshots)
+8. [Getting Started](#getting-started)
 
 
-## Description 
+### Description 
 Weather web application to check the weather forecast for a specific city built using HTML, CSS, Bootstrap. This assessment measures my capability to implement advanced JavaScript tools and features in a practical manner.
 
-## Pre-requisites
-- Understanding of HTML
-- Understanding of Bootstrap or CSS
-- Understanding of JavaScript
-
-## File Structure
+### File Structure
 ```
 components
 
@@ -34,16 +30,7 @@ LICENSE
 README.md
 ```
 
-
-## Objectives
-1. Use asynchronous JavaScript tools to build a responsive web application.
-2. Demonstrate understanding of the JavaScript event loop.
-3. Generate asynchronous code using Promises and async/await syntax.
-4. Use fetch and/or Axios to interact with an external web API.
-5. Organize files using modules and imports.
-
-
-## Instructions
+### Instructions
 You will create a small single-page web application. The topic and content of this application is entirely up to you; be creative!
 
 Your work will be graded according to the technical requirements listed in the following section. Creativity and effort always work in your favor, so feel free to go beyond the scope of the listed requirements if you have the time.
@@ -54,7 +41,24 @@ Once you have an idea in mind, approach your design through the user's perspecti
 
 You will need access to an external API in order to complete the requirements listed below. Since the content of the API will largely determine the content of your application, it should be chosen first and carefully. You can look for available APIs across the internet, but make sure they include features that will allow you to implement the requirements listed below.
 
-## Requirements
+
+### Objectives
+1. Use asynchronous JavaScript tools to build a responsive web application.
+2. Demonstrate understanding of the JavaScript event loop.
+3. Generate asynchronous code using Promises and async/await syntax.
+4. Use fetch and/or Axios to interact with an external web API.
+5. Organize files using modules and imports.
+
+
+### Pre-requisites
+- Understanding of HTML.
+- Understanding of Bootstrap or CSS.
+- Understanding of JavaScript.
+- Understand how to get data from an external API using Fetch and Axios.
+- Understand how to display data from external API.
+
+
+### Requirements
 The requirements listed here are ***absolute minimums***. Ensure that your application meets these requirements before attempting to further expand your features.
 
 | ***Requirement*** | ***Weight***    |
@@ -72,7 +76,7 @@ The requirements listed here are ***absolute minimums***. Ensure that your appli
 |Level of effort displayed in creativity, presentation, and user experience. | 5% |
 
 
-## Screenshots
+### Screenshots
 
 
 
