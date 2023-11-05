@@ -46,3 +46,25 @@ async function getWeatherData(location) {
         console.error('An error occurred:', error);
     }
 }
+
+// Display weather data for location
+function displayWeatherData(data) {
+    cityName.textContent = data.name;
+    weatherDescription.textContent = data.weather[0].description;
+    weatherIcon.className = `bi bi-weather-`;
+    temperature.textContent = `Temperature: ${data.main.temp.toFixed(1)}°F`;
+    feelsLike.textContent = `Feels Like: ${data.main.feels_like.toFixed(1)}°F`;
+    pressure.textContent = `Pressure: ${data.main.pressure} hPa`;
+    tempMax.textContent = `Max Temperature: ${data.main.temp_max.toFixed(1)}°F`;
+    tempMin.textContent = `Min Temperature: ${data.main.temp_min.toFixed(1)}°F`;
+
+    const sunriseTime = new Date(data.sys.sunrise * 1000);
+    const sunsetTime = new Date(data.sys.sunset * 1000);
+    sunrise.textContent = `Sunrise: ${sunriseTime.toLocaleTimeString()}`;
+    sunset.textContent = `Sunset: ${sunsetTime.toLocaleTimeString()}`;
+
+    // Update background color based on weather
+    updateBackgroundColor(data.weather[0].main);
+
+    weatherCard.style.display = 'block';
+}
