@@ -76,6 +76,7 @@ The requirements listed here are ***absolute minimums***. Ensure that your appli
 |Level of effort displayed in creativity, presentation, and user experience. | 5% |
 
 
+
 ### Screenshots
 
 

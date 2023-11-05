@@ -2,27 +2,27 @@
 import fetchWeatherData from '../components/weatherData.js';
 import getBackgroundImage from '../components/backgroundImage.js'
 import fetch5DayWeatherForecast from "../components/weatherForecast.js";
-import {
-    cityInput,
-    stateInput,
-    countryInput,
-    searchButton,
-    weatherCard,
-    cityName,
-    weatherDescription,
-    weatherIcon,
-    temperature,
-    feelsLike,
-    pressure,
-    tempMax,
-    tempMin,
-    sunrise,
-    sunset,
-    forecast,
-} from '../components/domElements.js';
 
 // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
 const apiKey = '4ae4a7e14072cdaa089d3848c195e1a7';
+
+// DOM elements
+const cityInput = document.getElementById('city-input');
+const stateInput = document.getElementById('state-input');
+const countryInput = document.getElementById('country-input');
+const searchButton = document.getElementById('search-button');
+const weatherCard = document.getElementById('weather-card');
+const cityName = document.getElementById('city-name');
+const weatherDescription = document.getElementById('weather-description');
+const weatherIcon = document.getElementById('weather-icon');
+const temperature = document.getElementById('temperature');
+const feelsLike = document.getElementById('feels-like');
+const pressure = document.getElementById('pressure');
+const tempMax = document.getElementById('temp-max');
+const tempMin = document.getElementById('temp-min');
+const sunrise = document.getElementById('sunrise');
+const sunset = document.getElementById('sunset');
+const forecast = document.getElementById('forecast');
 
 // Search Weather Event Listener
 searchButton.addEventListener('click', async () => {
@@ -30,6 +30,7 @@ searchButton.addEventListener('click', async () => {
     const state = stateInput.value;
     const country = countryInput.value;
     if (city) {
+        const location = state && country ? `${city},${state},${country}` : `${city},${country || 'US'}`;
         
         try {
             const weatherData = await fetchWeatherData(city, state, country);
@@ -54,6 +55,22 @@ searchButton.addEventListener('click', async () => {
     }
 });
 
+// async function getWeatherData(city, state = '', country = '') {
+//     const location = state ? `${city},${state},${country}` : `${city},${country}`;
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+
+//     try {
+//         const response = await fetch(apiUrl);
+//         if (response.ok) {
+//             const data = await response.json();
+//             displayWeatherData(data);
+//         } else {
+//             console.error('Failed to fetch weather data');
+//         }
+//     } catch (error) {
+//         console.error('An error occurred:', error);
+//     }
+// }
 
 // Display weather data for location
 function displayWeatherData(data) {
@@ -77,6 +94,23 @@ function displayWeatherData(data) {
     weatherCard.style.display = 'block';
 }
 
+// async function get5DayForecast(city, state = '', country = '') {
+//     const location = state ? `${city},${state},${country}` : `${city},${country}`;
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`;
+
+//     try {
+//         const response = await fetch(apiUrl);
+//         if (response.ok) {
+//             const data = await response.json();
+//             console.log("Daily weather data:", data)
+//             display5DayForecast(data);
+//         } else {
+//             console.error('Failed to fetch forecast data');
+//         }
+//     } catch (error) {
+//         console.error('An error occurred:', error);
+//     }
+// }
 
 async function display5DayForecast(data) {
     forecast.innerHTML = ''; // Clear previous forecast
@@ -122,6 +156,8 @@ async function display5DayForecast(data) {
             }
             
             // Daily weather details in a div container
+            // const weatherDetails = document.createElement('div');
+            // weatherDetails.classList.add('card-text');
             const temperatureElement = document.createElement('p');
             temperatureElement.textContent = `Temp: ${forecastItem.main.temp.toFixed(1)}°F`;
             temperatureElement.classList.add('card-text');
@@ -138,10 +174,15 @@ async function display5DayForecast(data) {
     
             cardBody.appendChild(dateElement);
             cardBody.appendChild(iconElement);
+            // weatherDetails.appendChild(temperatureElement)
+            // weatherDetails.appendChild(dailyFeelsLike)
+            // weatherDetails.appendChild(dailyWeatherDesc)
+            // weatherDetails.appendChild(dailyHumidity)
             cardBody.appendChild(temperatureElement);
             cardBody.appendChild(dailyFeelsLike);
             cardBody.appendChild(dailyHumidity);
             cardBody.appendChild(dailyWeatherDesc);
+            // cardBody.appendChild(weatherDetails);
             card.appendChild(cardBody);
             forecast.appendChild(card);
         }
@@ -151,6 +192,22 @@ async function display5DayForecast(data) {
 
 function updateBackgroundColor(background) {
     // Set the background image based on weather conditions
+    // let backgroundImage;
+
+    // switch (weather) {
+    //     case 'Clear':
+    //         backgroundImage = '/weather_backgrounds/clear.jpg'; // Clear sky image
+    //         break;
+    //     case 'Clouds':
+    //         backgroundImage = '/weather_backgrounds/cloudy.jpg'; // Gray
+    //         break;
+    //     case 'Rain':
+    //         backgroundImage = '/weather_backgrounds/rainy.jpg'; // Teal
+    //         break;
+    //     default:
+    //         backgroundImage = '/weather_backgrounds/sandy.jpg'; // Default white
+    // }
+
     document.body.style.backgroundImage = background;
 }
 
