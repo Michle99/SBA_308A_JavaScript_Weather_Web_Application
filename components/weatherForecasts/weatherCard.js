@@ -9,7 +9,10 @@ export function createForecastCard(date, forecastItem) {
     cardBody.classList.add('card-body');
 
     const dateElement = createCardElement('h5', date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }));
-    const iconElement = createWeatherIcon(forecastItem.weather[0].main);
+    const iconElement = createWeatherIcon(forecastItem.weather[0].icon);
+    console.log("iconElement:", iconElement);
+    console.log("forecast data:", forecastItem.weather[0].icon);
+    console.log("forecast main:", forecastItem.weather[0].main);
     const temperatureElement = createCardElement('p', `Temp: ${forecastItem.main.temp.toFixed(1)}°F`);
     const dailyFeelsLike = createCardElement('p', `Feels Like: ${forecastItem.main.feels_like.toFixed(1)}°F`);
     const dailyHumidity = createCardElement('p', `Humidity: ${forecastItem.main.humidity}%`);

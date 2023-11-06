@@ -1,6 +1,4 @@
 import { createForecastCard } from './weatherCard.js';
-import { createCardElement } from './cardElement.js';
-import { createWeatherIcon } from './weatherIcon.js';
 
 export function display5DayForecast(data, forecastContainer) {
     forecastContainer.innerHTML = ''; // Clear previous forecast

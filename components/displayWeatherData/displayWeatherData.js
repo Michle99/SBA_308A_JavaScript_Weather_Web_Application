@@ -6,8 +6,8 @@ export function displayWeatherData(data, cityNameElement, weatherDescriptionElem
     console.log("Weather icon:", iconUrl);
     
     weatherIconElement.src = `../../icons/${iconUrl}.png`;
-    weatherIconElement.alt= 'Weather Icon';
-    console.log("Weather icon Element:", weatherIconElement);
+    weatherIconElement.alt= `${data.weather[0].main}`;
+    console.log("Weather icon Element:", weatherIconElement, weatherIconElement.alt);
 
     cityNameElement.textContent = data.name;
     weatherDescriptionElement.textContent = data.weather[0].description;
