@@ -1,7 +1,7 @@
 // Import modules
-import fetchWeatherData from '../fetchWeatherData/weatherData.js';
-import getBackgroundImage from '../components/backgroundImage.js'
-import fetch5DayWeatherForecast from "../fetchWeatherData/weatherForecast.js";
+import fetchWeatherData from '../components/fetchWeatherData/weatherData.js';
+import getBackgroundImage from '../components/backgrndImageAndDom/backgroundImage.js'
+import fetch5DayWeatherForecast from "../components/fetchWeatherData/weatherForecast.js";
 import { display5DayForecast } from '../components/weatherForecasts/displayForecast.js'
 import { displayWeatherData } from '../components/displayWeatherData/displayWeatherData.js'
 import { updateBackgroundColor } from '../components/displayWeatherData/backgroundColor.js';
@@ -22,7 +22,7 @@ import {
     sunrise,
     sunset,
     forecast,
-} from '../components/domElements.js';
+} from '../components/backgrndImageAndDom/domElements.js';
 
 // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
 const apiKey = '4ae4a7e14072cdaa089d3848c195e1a7';
