@@ -17,43 +17,37 @@ Weather web application to check the weather forecast for a specific city built 
 ### Directory Structure
 ```
 SBA_308A_JavaScript_Weather_Web_Application
-│
 ├── components/
 │   ├── backgrndImageaAndDom/
 │   │   ├── backgroundImage.js
-│   │   ├── domElements.js
-│   │
+│   │   └── domElements.js
 │   ├── displayWeatherData/
 │   │   ├── backgroundColor.js
 │   │   ├── displayWeatherData.js
-│   │
 │   ├── fetchWeatherData/
 │   │   ├── weatherData.js
-│   │   ├── weatherForecast.js
-│   │
+│   │   └── weatherForecast.js
 │   ├── weatherForecasts/
 │   │   ├── cardElement.js
 │   │   ├── displayForecast.js
 │   │   ├── weatherCard.js
-│   │   ├── weatherIcon.js
-│
+│   │   └── weatherIcon.js
 ├── icons/
 │   ├── cloud.png
-│   ├── cloudy.png
-│
+│   └── cloudy.png
+├── screenshots/
+│   ├── screensht_0.png
+│   └── screensht_1.png
 ├── src/
 │   ├── index.html
-│   ├── script.js
-│
+│   └── script.js
 ├── styles/
 │   ├── styles.css
-│
 ├── weather_backgrounds/
 │   ├── clear.jpg
 │   ├── cloud.jpg
 │   ├── rainy.jpg
-│   ├── sandy.jpg
-│
+│   └── sandy.jpg
 ├── LICENSE
 ├── README.md
 ```
@@ -106,6 +100,11 @@ The requirements listed here are ***absolute minimums***. Ensure that your appli
 
 
 ### Screenshots
+The images for the Weather web application are below:
+
+<img src="./screenshots/screensht_0.png" width="90%" alt="Screenshot One">
+
+<img src="./screenshots/screensht_1.png" width="90%" alt="Screenshot Two">
 
 
 
