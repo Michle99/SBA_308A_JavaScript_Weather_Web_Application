@@ -1,3 +1,5 @@
+import { updateBackgroundColor } from "./backgroundColor.js";
+
 export function displayWeatherData(data, cityNameElement, weatherDescriptionElement, weatherIconElement, temperatureElement, feelsLikeElement, pressureElement, tempMaxElement, tempMinElement, sunriseElement, sunsetElement, weatherCardElement) {
     cityNameElement.textContent = data.name;
     weatherDescriptionElement.textContent = data.weather[0].description;
