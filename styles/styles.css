@@ -40,4 +40,17 @@
     position: relative;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-muted {
+    margin: 5px; /* Adjust the margin as needed for spacing between elements */
 }
