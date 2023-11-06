@@ -1,9 +1,15 @@
 import { updateBackgroundColor } from "./backgroundColor.js";
 
 export function displayWeatherData(data, cityNameElement, weatherDescriptionElement, weatherIconElement, temperatureElement, feelsLikeElement, pressureElement, tempMaxElement, tempMinElement, sunriseElement, sunsetElement, weatherCardElement) {
+    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    console.log("Weather icon:", icon);
+    
+    weatherIconElement.src = icon;
+
     cityNameElement.textContent = data.name;
     weatherDescriptionElement.textContent = data.weather[0].description;
-    weatherIconElement.className = `bi bi-weather-${data.weather[0].icon}`;
+
+
     temperatureElement.textContent = `Temperature: ${data.main.temp.toFixed(1)}°F`;
     feelsLikeElement.textContent = `Feels Like: ${data.main.feels_like.toFixed(1)}°F`;
     pressureElement.textContent = `Pressure: ${data.main.pressure} hPa`;
