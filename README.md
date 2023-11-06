@@ -14,20 +14,48 @@
 ### Description 
 Weather web application to check the weather forecast for a specific city built using HTML, CSS, Bootstrap. This assessment measures my capability to implement advanced JavaScript tools and features in a practical manner.
 
-### File Structure
+### Directory Structure
 ```
-components
-
-icons
-    cloud.png
-    cloudy.png
-src
-  index.html
-  script.js
-styles
-    styles.css
-LICENSE
-README.md
+SBA_308A_JavaScript_Weather_Web_Application
+│
+├── components/
+│   ├── backgrndImageaAndDom/
+│   │   ├── backgroundImage.js
+│   │   ├── domElements.js
+│   │
+│   ├── displayWeatherData/
+│   │   ├── backgroundColor.js
+│   │   ├── displayWeatherData.js
+│   │
+│   ├── fetchWeatherData/
+│   │   ├── weatherData.js
+│   │   ├── weatherForecast.js
+│   │
+│   ├── weatherForecasts/
+│   │   ├── cardElement.js
+│   │   ├── displayForecast.js
+│   │   ├── weatherCard.js
+│   │   ├── weatherIcon.js
+│
+├── icons/
+│   ├── cloud.png
+│   ├── cloudy.png
+│
+├── src/
+│   ├── index.html
+│   ├── script.js
+│
+├── styles/
+│   ├── styles.css
+│
+├── weather_backgrounds/
+│   ├── clear.jpg
+│   ├── cloud.jpg
+│   ├── rainy.jpg
+│   ├── sandy.jpg
+│
+├── LICENSE
+├── README.md
 ```
 
 ### Instructions
