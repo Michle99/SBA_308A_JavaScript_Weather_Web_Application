@@ -2,7 +2,7 @@
 
 ## Table Of Contents
 1. [Description](#description)
-2. [File Structure](#file-structure)
+2. [Directory Structure](#directory-structure)
 3. [Instructions](#instructions)
 4. [Objectives](#objectives)
 5. [Pre-requisites](#pre-requisites)
