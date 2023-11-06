@@ -1,6 +1,6 @@
 import { updateBackgroundColor } from "./backgroundColor.js";
 
-export function displayWeatherData(data, cityNameElement, weatherDescriptionElement, weatherIconElement, temperatureElement, feelsLikeElement, pressureElement, tempMaxElement, tempMinElement, sunriseElement, sunsetElement, weatherCardElement) {
+export function displayWeatherData(data, cityNameElement, weatherDateTimeElement, weatherDescriptionElement, weatherIconElement, temperatureElement, feelsLikeElement, pressureElement, tempMaxElement, tempMinElement, sunriseElement, sunsetElement, weatherCardElement) {
     const iconUrl = data.weather[0].icon;
     // `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     console.log("Weather icon:", iconUrl);
@@ -10,8 +10,11 @@ export function displayWeatherData(data, cityNameElement, weatherDescriptionElem
     console.log("Weather icon Element:", weatherIconElement, weatherIconElement.alt);
 
     cityNameElement.textContent = data.name;
-    weatherDescriptionElement.textContent = data.weather[0].description;
+    const date = new Date();
+    const dateString = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    weatherDateTimeElement.textContent = dateString;
 
+    weatherDescriptionElement.textContent = data.weather[0].description;
 
     temperatureElement.textContent = `Temperature: ${data.main.temp.toFixed(1)}°F`;
     feelsLikeElement.textContent = `Feels Like: ${data.main.feels_like.toFixed(1)}°F`;
@@ -28,4 +31,5 @@ export function displayWeatherData(data, cityNameElement, weatherDescriptionElem
     updateBackgroundColor(data.weather[0].main);
 
     weatherCardElement.style.display = 'block';
+    console.log("weather card element:", weatherCardElement);
 }

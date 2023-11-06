@@ -8,6 +8,7 @@ export const searchButton = document.getElementById('search-button');
 export const weatherCard = document.getElementById('weather-card');
 export const cityName = document.getElementById('city-name');
 export const weatherDescription = document.getElementById('weather-description');
+export const weatherDateTime = document.getElementById('date-time');
 export const weatherIcon = document.getElementById('weather-icon');
 export const temperature = document.getElementById('temperature');
 export const feelsLike = document.getElementById('feels-like');

@@ -4,16 +4,16 @@ const getBackgroundImage = (weather) => {
 
     switch (weather) {
         case 'Clear':
-            backgroundImage = '../weather_backgrounds/clear.jpg'; // Clear sky image
+            backgroundImage = '../../weather_backgrounds/clear.jpg'; // Clear sky image
             break;
         case 'Clouds':
-            backgroundImage = '../weather_backgrounds/cloudy.jpg'; // Gray
+            backgroundImage = '../../weather_backgrounds/cloudy.jpg'; // Gray
             break;
         case 'Rain':
-            backgroundImage = '../weather_backgrounds/rainy.jpg'; // Teal
+            backgroundImage = '../../weather_backgrounds/rainy.jpg'; // Teal
             break;
         default:
-            backgroundImage = '../weather_backgrounds/sandy.jpg'; // Default white
+            backgroundImage = '../../weather_backgrounds/sandy.jpg'; // Default white
     }
 
     document.body.style.backgroundImage = `url(${backgroundImage})`;

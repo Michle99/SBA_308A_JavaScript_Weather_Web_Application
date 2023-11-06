@@ -7,6 +7,7 @@ export function createForecastCard(date, forecastItem) {
     card.classList.add('card', 'col-md-2', 'm-2');
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
+    console.log("Weather Forecast cards:", card)
 
     const dateElement = createCardElement('h5', date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }));
     const iconElement = createWeatherIcon(forecastItem.weather[0].icon);

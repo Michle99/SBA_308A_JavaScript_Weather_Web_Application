@@ -12,6 +12,7 @@ import {
     searchButton,
     weatherCard,
     cityName,
+    weatherDateTime,
     weatherDescription,
     weatherIcon,
     temperature,
@@ -40,6 +41,7 @@ searchButton.addEventListener('click', async () => {
                 displayWeatherData(
                     weatherData,
                     cityName,
+                    weatherDateTime,
                     weatherDescription,
                     weatherIcon,
                     temperature,
