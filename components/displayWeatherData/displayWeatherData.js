@@ -1,10 +1,13 @@
 import { updateBackgroundColor } from "./backgroundColor.js";
 
 export function displayWeatherData(data, cityNameElement, weatherDescriptionElement, weatherIconElement, temperatureElement, feelsLikeElement, pressureElement, tempMaxElement, tempMinElement, sunriseElement, sunsetElement, weatherCardElement) {
-    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    console.log("Weather icon:", icon);
+    const iconUrl = data.weather[0].icon;
+    // `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    console.log("Weather icon:", iconUrl);
     
-    weatherIconElement.src = icon;
+    weatherIconElement.src = `../../icons/${iconUrl}.png`;
+    weatherIconElement.alt= 'Weather Icon';
+    console.log("Weather icon Element:", weatherIconElement);
 
     cityNameElement.textContent = data.name;
     weatherDescriptionElement.textContent = data.weather[0].description;
